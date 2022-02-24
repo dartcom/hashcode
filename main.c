@@ -4,12 +4,18 @@
 #define BUFFERSIZE 80
 
 
+
+
+
 enum READING_ENUM {READING_HEADER, READING_CONTRIBUTOR, READING_SKILLS, READING_PROJECT, READING_PROJECT_REQUIREMENTS };
 
 enum READING_ENUM reading_state;
 
 int total_contributors;
 int total_projects;
+
+
+
 
 
 char * get_word(char * line){
