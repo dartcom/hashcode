@@ -1,2 +1,2 @@
 all:
-	gcc main.c -o main.o
+	gcc parser.c functions.c main.c -o main.o

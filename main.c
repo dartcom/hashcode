@@ -1,60 +1,15 @@
- #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 #define BUFFERSIZE 80
 
+#include "parser.h"
+#include "functions.h"
 
 
 
 
-enum READING_ENUM {READING_HEADER, READING_CONTRIBUTOR, READING_SKILLS, READING_PROJECT, READING_PROJECT_REQUIREMENTS };
-
-enum READING_ENUM reading_state;
-
-int total_contributors;
-int total_projects;
-
-
-
-
-
-char * get_word(char * line){
-    while(line != EOF){
-        if(line == ' '){
-            return line;
-        }
-
-        line++;
-    }
-    return NULL;
-}
-
-
-void process_line(char * line){
-    if(reading_state == READING_HEADER){
-        
-
-    }else if(reading_state == READING_CONTRIBUTOR){
-
-
-    }else if(reading_state == READING_SKILLS){
-
-
-    }else if(reading_state == READING_PROJECT){
-
-
-    }else if(reading_state == READING_PROJECT_REQUIREMENTS){
-
-
-    }else{
-
-    }
-
-
-}
-
-
-
+extern enum READING_ENUM reading_state;
 
 
 int main(int argc, char *argv[]){
@@ -98,6 +53,7 @@ int main(int argc, char *argv[]){
     getline_res = getline(&buffer, &buffsize, fp );
     while(getline_res != -1){
         printf("%s", buffer);
+        process_line(buffer);
 
         getline_res = getline(&buffer, &buffsize, fp );
     }
